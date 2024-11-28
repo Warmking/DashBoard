@@ -1,0 +1,129 @@
+/* ===================GOOGLE FONTS ======================================= */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+:root {
+  --body-font: "Poppins", sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  --normal-font-size : 1rem;
+  --font-normal : 400;
+  --font-medium : 500;
+  --font-bold: 600
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  font-family: var(--body-font);
+  font-weight: var(--font-normal);
+}
+
+.app__container{
+  display: flex;
+  padding: 1rem;
+}
+
+
+/* ************************ Nav section    ******************************* */
+nav{
+  flex:1;
+  background-color: rgba(255, 255, 255, 1);
+  height: 100vh;
+  justify-content: center;
+  color:rgba(115, 119, 145, 1);
+  font-weight: var(--font-medium);
+}
+.main__container{
+  flex : 5;
+  border: 1px solid rgba(0, 0, 0, 0.4)
+}
+
+.nav__logo{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin : 0.25rem 0 2rem 0;
+}
+
+.nav__menu{
+  font-size: 1.1rem;
+  
+}
+.nav__icon {
+  font-size: 1.75rem;
+}
+
+.nav__title{
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem 1rem;
+  margin: 0.5rem auto;
+  width: 70%;
+  cursor: pointer;
+  border-radius: 1rem;
+  align-items: center;
+}
+.nav__title:hover {
+  background-color:rgba(243, 148, 30, 1);
+  color: #ffff;
+}
+
+.nav__title:focus{
+  background-color:rgba(243, 148, 30, 1);
+  color: #ffff;
+}
+.active__item{
+  background-color:rgba(243, 148, 30, 1);
+  color: #ffff;
+}
+
+/* **************************  Main ******************************** */
+main{
+  background-color: rgba(249, 250, 251, 1);
+}
+
+
+/* ***************  dummy **********************************  */
+/* .logo__container{
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(0, 0, 0, 0.4);
+  justify-content: center;
+  align-items: center;
+} */
+
+/* .company__name{
+  color:#151D48;
+  font-weight: 500;
+  padding: .25rem;
+}
+.nav{
+  width: 1575px;
+  height: 120px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid;
+}
+.search__bar{
+  width: 845px;
+  height: 60px;
+  border: solid;
+}
+
+.menu{
+  width: 298px;
+  height: 49px;
+  display: flex;
+}
+.menu img {
+  border-radius: 50%;
+}
+.flex{
+  display: flex;
+} */
