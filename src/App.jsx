@@ -1,19 +1,26 @@
 import { useState } from "react";
 import "./App.css";
-import { USER_PROFILE } from "./constant";
+import { ORDER_SUMMARY, TRANSACTION_DATA, USER_PROFILE } from "./constant";
 import NavMenuItem from "./components/NavMenuItem";
 import { Title } from "./constant";
+import OrderSummary from "./components/OrderSummary";
+import Container from "./components/Container";
+import OrderBox from "./components/OrderBox";
+import TableTransactions from "./components/TableTransactions";
+import GraphSummary from "./constant/GraphSummary";
+import ProgressTable from "./components/ProgressTable";
+import CreditCardSection from "./components/CreditCardSection";
 function App() {
   const [activeIndex, setActiveIndex] = useState(null);
   return (
     <>
       <div className="app__container">
-        <nav>
+        <nav className="w-min-[100px]">
           <div className="nav__logo">
             <svg
               width="64"
               height="64"
-              // viewBox="0 0 64 96"
+              viewBox="0 -20 60 100"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -81,15 +88,78 @@ function App() {
                   className={item.icon}
                   title={item.title}
                   onClick={() => {
-                    setActiveIndex(index)
+                    setActiveIndex(index);
                   }}
                 />
               ))}
           </div>
         </nav>
         <div className="main__container">
-          <header></header>
-          <main></main>
+          <header>
+            <div className="search__box">
+              <i className="uil uil-search search__icon"></i>
+              <input
+                type="text"
+                name="search"
+                className="search__bar"
+                placeholder="Search here..."
+              />
+            </div>
+            <div className="header__profile__box">
+              <div className="icon__box">
+                <i className="bx bx-bell header__icon"></i>
+              </div>
+              <img
+                className="header__profile"
+                src={USER_PROFILE}
+                alt="Profile"
+              />
+              <div className="profile__title">
+                <span className="profile__user">Mohan</span>
+                <i className="uil uil-angle-down profile__dropdown"></i>
+
+                <p className="profile__role">Mannger</p>
+              </div>
+            </div>
+          </header>
+          <main className="flex flex-col justify-center">
+            <div className="flex justify-center">
+              <div className="basis-[60%]">
+                <Container title="Total Order Summary" showExtraInfo="true">
+                  <div className="flex">
+                    {ORDER_SUMMARY &&
+                      ORDER_SUMMARY.data.map((item, _) => (
+                        <OrderBox
+                          key={_}
+                          quantity={item.quantity}
+                          status={item.status}
+                          iconClass={item.iconClass}
+                          percentage={item.percentage}
+                          bgColor={item.bgColor}
+                          iconColor={item.iconColor}
+                        />
+                      ))}
+                  </div>
+                </Container>
+                <Container title="Analytics">
+                  <GraphSummary />
+                </Container>
+              </div>
+              <div className="basis-[40%]">
+                <TableTransactions tableData={TRANSACTION_DATA} />
+              </div>
+            </div>
+            <div className="grid grid-cols-[minmax(550px,_1fr)_500px]">
+              <div className="">
+                <Container title="Top Products">
+                  <ProgressTable />
+                </Container>
+              </div>
+              <div className="">
+                <CreditCardSection/>
+              </div>
+            </div>
+          </main>
         </div>
       </div>
     </>

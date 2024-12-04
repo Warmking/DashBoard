@@ -25,22 +25,26 @@ body{
 
 .app__container{
   display: flex;
-  padding: 1rem;
+  height: 100vh;
+  box-sizing: border-box;
 }
 
 
 /* ************************ Nav section    ******************************* */
 nav{
   flex:1;
+  min-width: 250px;
   background-color: rgba(255, 255, 255, 1);
-  height: 100vh;
+  height: 100%;
   justify-content: center;
   color:rgba(115, 119, 145, 1);
   font-weight: var(--font-medium);
 }
 .main__container{
-  flex : 5;
-  border: 1px solid rgba(0, 0, 0, 0.4)
+  flex : 4;
+}
+.company__name{
+  font-size: 1.2rem;
 }
 
 .nav__logo{
@@ -51,19 +55,21 @@ nav{
 }
 
 .nav__menu{
-  font-size: 1.1rem;
+  font-size: 0.9rem;
   
 }
 .nav__icon {
-  font-size: 1.75rem;
+  font-size: 1.1rem;
 }
 
 .nav__title{
   display: flex;
   gap: 1rem;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 0.75rem;
   margin: 0.5rem auto;
-  width: 70%;
+  width: 65%;
+  /* justify-content: center; */
+  justify-content: flex-start;
   cursor: pointer;
   border-radius: 1rem;
   align-items: center;
@@ -82,11 +88,83 @@ nav{
   color: #ffff;
 }
 
+
+
+/* ************************** Header ************** */
+header{
+    display: flex;
+    /* gap: 12rem; */
+    font-size: 0.75rem;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0;
+    align-items: center;
+    /* border:  1px solid rgba(0, 0, 0, 0.4) ; */
+}
+.search__box{
+  /* margin: 1.5rem; */
+  margin: 0 1rem;
+  padding: 0.5rem 1rem;
+  display: flex;
+  
+  /* flex: 3; */
+  /* border:  1px solid rgba(0, 0, 0, 0.4) ; */
+  border-radius: .5rem;
+ background-color:  rgba(249, 250, 251, 1);
+ /* max-width: 500px; */
+ align-items: center;
+ width: 60%;
+}
+.header__profile__box{
+  display: flex;
+  margin: 0.5rem;
+  padding: .5rem;
+  gap: 0.75rem;
+  /* border:  1px solid rgba(0, 0, 0, 0.4) ; */
+  align-items: center;
+}
+.header__icon{
+  font-size: 1.5rem;
+}
+.header__profile{
+  border-radius: 50%;
+  width: 2.5rem;
+  margin: 0 0.5rem;
+}
+
+.profile__title{
+  font-size: 1rem;
+}
+/* .profile__user{
+
+} */
+.profile__dropdown{
+  padding-left: 1.5rem;
+  font-size: 1rem;
+}
+.profile__role{
+  color:rgba(115, 119, 145, 1);
+}
+ .search__bar {
+  width: 100%;
+  padding: .2rem .5rem;
+  outline: none;
+  border: 0;
+  font-size: 1rem;
+  background-color:  rgba(249, 250, 251, 1);
+
+}
+.search__icon{
+color: rgba(243, 148, 30, 1);
+font-size: 1.1rem;
+padding: 0 .2rem;
+}
+
 /* **************************  Main ******************************** */
 main{
   background-color: rgba(249, 250, 251, 1);
+  /* height: 100%; */
 }
-
 
 /* ***************  dummy **********************************  */
 /* .logo__container{
@@ -127,3 +205,14 @@ main{
 .flex{
   display: flex;
 } */
+
+
+
+/* ************************   Responsive Design ************************* */
+
+@media screen and (max-width : 450px ) {
+  *{
+    font-size: 10px;
+  }
+  
+}
