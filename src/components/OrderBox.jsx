@@ -10,7 +10,7 @@ const OrderBox = ({
 
 }) => {
   return (
-    <div style={{backgroundColor:bgColor}} className={`p-3 m-4 rounded-xl w-full`}>
+    <div style={{backgroundColor:bgColor}} className={`p-3 m-4 rounded-xl w-full hover:scale-125`}>
       <span style={{backgroundColor:iconColor}} className={`p-1 px-2 mt-1 rounded-full inline-block`}>
         <i className={`uil ${iconClass} text-white text-sm`}></i>
       </span>
