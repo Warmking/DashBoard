@@ -3,10 +3,10 @@ import React from "react";
 const TableTransactions = ({ tableData = "" }) => {
   const headers = Object.keys(tableData[0]);
   return (
-    <div className="bg-[#F7FFFA] px-3 m-2 rounded-xl focus:border-[#197BBD] focus:border">
+    <div className="bg-[#F7FFFA] px-3 m-2 rounded-xl focus:border-[#197BBD] focus:border py-3 pb-5">
     <h3 className="text-center font-bold p-4">Last 10 transactions</h3>
       <table
-        style={{ width: "100%", textAlign: "left", borderCollapse: "collapse" }} className="text-[0.7rem]"
+        style={{ width: "100%", textAlign: "left", borderCollapse: "collapse" }} className="text-[0.9rem]"
       >
         <thead>
           <tr className="text-[#AEAEAE] font-thin">
@@ -16,9 +16,9 @@ const TableTransactions = ({ tableData = "" }) => {
             ))} 
           </tr>
         </thead>
-        <tbody>
+        <tbody className="">
           {tableData.map((data, rowIndex) => (
-            <tr key={rowIndex}>
+            <tr key={rowIndex} className="">
               <td className="p-2">{rowIndex+1}</td>
               <td className="p-2">{data.Date}</td>
               <td className="p-2 text-[#718EBF]">{data.Name}</td>

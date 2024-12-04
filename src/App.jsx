@@ -14,8 +14,8 @@ function App() {
   const [activeIndex, setActiveIndex] = useState(null);
   return (
     <>
-      <div className="app__container">
-        <nav className="w-min-[100px]">
+      <div className="app__container flex">
+        <nav className="w-min-[100px] h-fit fixed border-black border inline-block">
           <div className="nav__logo">
             <svg
               width="64"
@@ -94,7 +94,7 @@ function App() {
               ))}
           </div>
         </nav>
-        <div className="main__container">
+        <div className="main__container ml-[250px]">
           <header>
             <div className="search__box">
               <i className="uil uil-search search__icon"></i>
